@@ -13,6 +13,9 @@ app.use(express.json());
 
 app.use("/api/contact", contactRoutes)
 
+app.get("/", (req, res) => {
+  res.send("API is working!");
+});
 app.listen(PORT ,(req,res)=>{
     console.log(`Server listening on port ${PORT}`)
 })

@@ -8,7 +8,7 @@ router.post("/", async(req,res)=>{
     return res.status(400).json({messgae: "All Fields are required"});
    }
    try {
-    const contact = new Contact({name,email,subject,message});
+    const contact = new ContactModel({name,email,subject,message});
     await contact.save();
     res.status(201).json({success: true, message: "Contact Form SUbmitted Successfully"})
    } catch (error) {
